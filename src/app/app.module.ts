@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsModule } from './products/products.module';
-import { StarComponent } from './shared/star/star.component';
+import { HttpClientModule } from '@angular/common/http';
+import { WelcomeModule } from './welcome/welcome.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,9 @@ import { StarComponent } from './shared/star/star.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductsModule
+    ProductsModule,
+    HttpClientModule,
+    WelcomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

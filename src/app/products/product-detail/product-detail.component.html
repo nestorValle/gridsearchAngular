@@ -1,0 +1,22 @@
+<div class="card" *ngIf='product'>
+  <div class="card-header">
+    {{pageTitle + ': ' + product.productName}}
+  </div>
+  <div class="card-body">
+      <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+                <h4 class="card-title">{{product.productName}}</h4>
+                <p class="card-text">{{'Product Code: ' + product.productCode}}</p>
+                <p class="card-text">{{'Product Description: ' + product.description}}</p>  
+            </div>
+            <div class="col-md-6">
+                <img [src]='product.imageUrl' class="img-fluid rounded-circle" alt="">  
+            </div>
+          </div>
+        </div>
+  </div>
+  <div class="card-footer text-muted">
+    <button type="button" class="btn btn-outline-primary" (click)="backPage()">Back</button>
+  </div>
+</div>

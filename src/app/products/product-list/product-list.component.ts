@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/Services/product.service';
 })
 export class ProductListComponent implements OnInit {
   pageTitle: string = 'Product List'
+  errorMessage: string;
   showImage: boolean = false;
   _filterByCharacters: string;
 
@@ -27,8 +28,14 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.products = this.productService.getProducts();
-    this.filteredListProducts = this.products;
+    this.productService.getProducts()
+    .subscribe(prod=> {
+      this.products = prod;
+      this.filteredListProducts = this.products;
+    },
+    error=> this.errorMessage = <any>error
+    );
+    
   }
   filtereProducts(filter: string): IProduct[] {
     return this.products.filter((p: IProduct) => p.productName.toLowerCase().indexOf(filter.toLowerCase()) !== -1)
