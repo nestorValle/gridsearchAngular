@@ -13,10 +13,10 @@ import { WelcomeModule } from './welcome/welcome.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     ProductsModule,
-    HttpClientModule,
-    WelcomeModule
+    WelcomeModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
