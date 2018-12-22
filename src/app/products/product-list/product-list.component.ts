@@ -8,9 +8,9 @@ import { ProductService } from 'src/app/Services/product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  pageTitle: string = 'Product List'
+  pageTitle = 'Product List';
   errorMessage: string;
-  showImage: boolean = false;
+  showImage = false;
   _filterByCharacters: string;
 
   public get filterBy(): string {
@@ -29,16 +29,16 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.productService.getProducts()
-    .subscribe(prod=> {
+    .subscribe(prod => {
       this.products = prod;
       this.filteredListProducts = this.products;
     },
-    error=> this.errorMessage = <any>error
+    error => this.errorMessage = <any>error
     );
-    
+
   }
   filtereProducts(filter: string): IProduct[] {
-    return this.products.filter((p: IProduct) => p.productName.toLowerCase().indexOf(filter.toLowerCase()) !== -1)
+    return this.products.filter((p: IProduct) => p.productName.toLowerCase().indexOf(filter.toLowerCase()) !== -1);
   }
   toggleImage() {
     this.showImage = !this.showImage;

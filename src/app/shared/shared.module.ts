@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule
   ],
-  exports:[
+  exports: [
     StarComponent,
     FormsModule,
     CommonModule

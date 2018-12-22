@@ -6,15 +6,15 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ValidateURLGuard implements CanActivate {
-  constructor(private router:Router){
+  constructor(private router: Router) {
   }
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      let indexForIdinUrl = 1;
-      let id= +next.url[indexForIdinUrl].path;
-      if(isNaN(id)|| id < 1){
+      const indexForIdinUrl = 1;
+      const id = +next.url[indexForIdinUrl].path;
+      if (isNaN(id) || id < 1) {
         alert('is not a valid number');
         this.router.navigate(['']);
         return false;

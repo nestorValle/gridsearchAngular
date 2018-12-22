@@ -5,8 +5,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ValidateURLGuard } from '../Services/guards/validate-url.guard';
 
 const routes: Routes = [
-  {path:'products',component:ProductListComponent},
-  {path:'product/:id', canActivate:[ValidateURLGuard], component: ProductDetailComponent},
+  {path: 'products', component: ProductListComponent},
+  {path: 'product/:id', canActivate: [ValidateURLGuard], component: ProductDetailComponent},
 ];
 
 @NgModule({
